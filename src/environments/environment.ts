@@ -3,35 +3,35 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
-const chain = '5dad9f713ce25d88d509c54e69820eb5ddda1132fc15107b33b56ad6d7110de5';
+const chain = 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906';
 export const environment = {
     production: false,
-    appName: 'CANBlockExplorer',
+    appName: 'EOSweb',
     network: {
         blockchain: 'eos',
-        host: 'api-testnet.canfoundation.io',
-        port: 8443,
+        host: 'bp.cryptolions.io',
+        port: 443,
         protocol: 'https',
         expireInSeconds: 120,
         chainId: chain
     },
     chain: chain,
     Eos: {
-        httpEndpoint: 'https://api-testnet.canfoundation.io:8443',
+        httpEndpoint: 'https://bp.cryptolions.io',
         chainId: chain,
         verbose: false
     },
     frontConfig: {
-       coin: 'CAT',
+       coin: 'EOS',
        bp: 'bp.json',
        tokenContract: 'eosio.token',
-       totalBalance: 'CAT',
+       totalBalance: 'EOS',
        convertToUSD: true,
        customBalance: false,
-       logo: '/assets/images/canweb.png',
+       logo: '/assets/images/eosweb.png',
        name: {
-          big: 'block',
-          small: 'explorer'
+          big: 'eos',
+          small: 'web'
        },
        nets: [{ name: 'Mainnet', url: 'https://eosweb.net', active: true },
               { name: 'Jungle', url: 'https://jungle.eosweb.net', active: false },
@@ -43,12 +43,12 @@ export const environment = {
        version: '2.2.8',
        producers: 1000,
        social: [
-         { link: 'https://github.com/canfoundation', icon: 'fa-github' },
-         { link: 'https://www.facebook.com/canfoundation.io', icon: 'fa-facebook' },
+         { link: '', icon: 'fa-github' },
+         { link: '', icon: 'fa-facebook' },
          { link: '', icon: 'fa-reddit-alien' },
-         { link: '', icon: 'fa-medium' },
-         { link: '', icon: 'fa-twitter' },
-         { link: 'https://t.me/cryptobadge_usergroup', icon: 'fa-telegram-plane' }
+         { link: 'https://medium.com/europechain', icon: 'fa-medium' },
+         { link: 'https://twitter.com/europechain_', icon: 'fa-twitter' },
+         { link: 'https://t.me/europechain', icon: 'fa-telegram-plane' }
        ],
        liveTXenable: true
     }
