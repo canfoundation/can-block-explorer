@@ -41,7 +41,7 @@ export class ProducersPageComponent implements OnInit, OnDestroy{
 
   getBlockData(){
       this.spinner   = (this.firstLoad) ? true : false;
-  		let producers  = this.http.get(`/api/custom/get_table_rows/eosio/eosio/producers/${this.frontConfig.producers}`);
+  		let producers  = this.http.get(`/api/v1/get_table_rows/eosio/eosio/producers/${this.frontConfig.producers}`);
       let global     = this.http.get(`/api/v1/get_table_rows/eosio/eosio/global/1`);
       let bpInfo     = this.http.get(`/api/v1/get_producers_bp_json`);
 
