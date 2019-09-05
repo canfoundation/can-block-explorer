@@ -5,23 +5,20 @@ const path = require('path');
 let config = {};
 
 // production mod
-config.PROD = true;
+config.PROD = false;
 
 // mongo uri and options
-config.MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017';
+config.MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/EOSweb';
 config.MONGO_OPTIONS = {
     socketTimeoutMS: 30000,
     keepAlive: true,
     reconnectTries: 30000,
-    useNewUrlParser: true,
-  dbName: 'EOSweb',
-  user: 'root',
-  pass: 'test123',
+    useNewUrlParser: true
 };
 
 // cron processes (aggregation of main stat - actions, transactions, accounts, analytics)
-config.CRON = true;
-config.CRON_API = 'https://api-testnet.canfoundation.io:8443';
+config.CRON = false;
+config.CRON_API = 'https://public.eosinfra.io';
 
 // anable TPS APS daemon aggregation
 config.TPS_ENABLE = true;
@@ -42,7 +39,7 @@ config.telegram = {
 
 // reserve nodes
 config.endpoints = [
-      'https://api-testnet.canfoundation.io:8443'
+      'http://3.10.0.98:8888'
       // 'https://eos.greymass.com',
       // 'https://public.eosinfra.io', 
       // 'http://eosbp-0.atticlab.net'
@@ -64,10 +61,10 @@ config.eosConfig = {
 
 
 // api url for producers list
-config.customChain = 'https://api-testnet.canfoundation.io:8443';
+config.customChain = 'http://3.10.0.98:8888';
 
 // api url for history
-config.historyChain = 'https://history-testnet.canfoundation.io';
+config.historyChain = 'http://3.10.0.98:8888';
 
 // tokens api
 config.tokensAPI = 'http://api.light.xeos.me/api/account/eos/';
