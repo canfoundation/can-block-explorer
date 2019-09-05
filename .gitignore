@@ -4,15 +4,12 @@
 /dist
 /tmp
 /out-tsc
-mongo
 
 # dependencies
 /node_modules
 /server/node_modules
 /server/logs
 #config.js
-config/config*.js
-config/domain.*
 /jungle.config.js
 /xec.config.js
 /wax.config.js
