@@ -3,49 +3,49 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
-const chain = 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906';
+const chain = '5dad9f713ce25d88d509c54e69820eb5ddda1132fc15107b33b56ad6d7110de5';
 export const environment = {
     production: false,
-    appName: 'EOSweb',
+    appName: 'CANBlockExplorer',
     network: {
         blockchain: 'eos',
-        host: 'bp.cryptolions.io',
-        port: 443,
+        host: '3.10.0.98',
+        port: 8443,
         protocol: 'https',
         expireInSeconds: 120,
         chainId: chain
     },
     chain: chain,
     Eos: {
-        httpEndpoint: 'https://bp.cryptolions.io',
+        httpEndpoint: 'https://3.10.0.98:8443',
         chainId: chain,
         verbose: false
     },
     frontConfig: {
-       coin: 'EOS',
+       coin: 'CAT',
        tokenContract: 'eosio.token',
-       totalBalance: 'EOS',
-       convertToUSD: true,
+       totalBalance: 'CAT',
+       convertToUSD: false,
        customBalance: false,
-       logo: '/assets/images/eosweb.png',
+       logo: '/assets/images/canweb.png',
        name: {
-          big: 'eos',
-          small: 'web'
+          big: 'block',
+          small: 'explorer'
        },
-       nets: [{ name: 'Mainnet', url: 'https://eosweb.net', active: true },
-              { name: 'Jungle', url: 'https://jungle.eosweb.net', active: false }],
-       disableNets: false,
-       voteDonationAcc: 'eoswebnetbp1',
-       disableVoteDonation: false,
-       version: '2.2.8',
+       nets: [{ name: 'Mainnet', url: '#', active: true },
+              { name: 'Jungle', url: '#', active: false }],
+       disableNets: true,
+       voteDonationAcc: '',
+       disableVoteDonation: true,
+       version: '1.0.0',
        producers: 1000,
        social: [
-         { link: '', icon: 'fa-github' },
-         { link: '', icon: 'fa-facebook' },
+         { link: 'https://github.com/canfoundation', icon: 'fa-github' },
+         { link: 'https://www.facebook.com/canfoundation.io', icon: 'fa-facebook' },
          { link: '', icon: 'fa-reddit-alien' },
-         { link: 'https://medium.com/europechain', icon: 'fa-medium' },
-         { link: 'https://twitter.com/europechain_', icon: 'fa-twitter' },
-         { link: 'https://t.me/europechain', icon: 'fa-telegram-plane' }
+         { link: '', icon: 'fa-medium' },
+         { link: '', icon: 'fa-twitter' },
+         { link: 'https://t.me/cryptobadge_usergroup', icon: 'fa-telegram-plane' }
        ],
        liveTXenable: true
     }

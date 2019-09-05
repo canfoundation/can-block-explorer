@@ -115,7 +115,7 @@ module.exports = function(mongoMain){
 	           })
 	            .then(result => {
 					let ramPrice = countRamPrice(result);
-					bot.sendMessage(msg.chat.id, `ram price = ${ramPrice.toFixed(5)} EOS`);
+					bot.sendMessage(msg.chat.id, `ram price = ${ramPrice.toFixed(5)} CAT`);
 				});
 	});
 
