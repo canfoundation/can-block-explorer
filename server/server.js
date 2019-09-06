@@ -78,6 +78,7 @@ server.on('listening', onListening);
 
 //========= socket io connection
 const io  = require('socket.io').listen(server);
+io.set('origins', '*:*');
 require(`./api/eos.api.${config.apiV}.socket`)(io, mongoMain, metrics);
 
 if (config.CRON){
