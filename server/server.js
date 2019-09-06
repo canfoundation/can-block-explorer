@@ -11,6 +11,7 @@ const helmet        = require('helmet');
 const compression   = require('compression');
 const request       = require('request');
 const async			    = require('async');
+const cors          = require('cors');
 
 const configName    = (process.env.CONFIG) ? process.env.CONFIG : 'config';
 const config        = require(`../${configName}`);
@@ -53,6 +54,7 @@ let metrics = {
 };
 
 const app  = express();
+app.use(cors({ origin: true, credentials: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
