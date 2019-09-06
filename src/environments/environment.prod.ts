@@ -20,7 +20,7 @@ export const environment = {
        coin: 'CAT',
        tokenContract: 'eosio.token',
        totalBalance: 'CAT',
-       convertToUSD: true,
+       convertToUSD: false,
        customBalance: false,
        logo: '/assets/images/canweb.png',
        name: {
@@ -30,7 +30,7 @@ export const environment = {
        nets: [{ name: 'Mainnet', url: '#', active: true },
               { name: 'Jungle', url: '#', active: false }],
        disableNets: true,
-       voteDonationAcc: 'eoswebnetbp1',
+       voteDonationAcc: '',
        disableVoteDonation: false,
        version: '1.0.0',
        producers: 1000,
