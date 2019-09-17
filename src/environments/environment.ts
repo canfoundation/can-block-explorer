@@ -25,7 +25,7 @@ export const environment = {
        coin: 'CAT',
        tokenContract: 'eosio.token',
        totalBalance: 'CAT',
-       convertToUSD: false,
+       convertToUSD: true,
        customBalance: false,
        logo: '/assets/images/canweb.png',
        name: {
