@@ -5,7 +5,7 @@ const path = require('path');
 let config = {};
 
 // production mod
-config.PROD = false;
+config.PROD = true;
 
 // mongo uri and options
 config.MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/EOSweb';
@@ -17,7 +17,7 @@ config.MONGO_OPTIONS = {
 };
 
 // cron processes (aggregation of main stat - actions, transactions, accounts, analytics)
-config.CRON = false;
+config.CRON = true;
 config.CRON_API = 'https://public.eosinfra.io';
 
 // anable TPS APS daemon aggregation
