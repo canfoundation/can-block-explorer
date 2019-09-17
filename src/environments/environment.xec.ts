@@ -21,7 +21,7 @@ export const environment = {
        bp: 'xec.json',
        tokenContract: 'eosio.token',
        totalBalance: 'XEC',
-       convertToUSD: false,
+       convertToUSD: true,
        customBalance: false,
        logo: '/assets/images/xec.png',
        name: {
