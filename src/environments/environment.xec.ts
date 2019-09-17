@@ -20,7 +20,7 @@ export const environment = {
        coin: 'XEC',
        tokenContract: 'eosio.token',
        totalBalance: 'XEC',
-       convertToUSD: false,
+       convertToUSD: true,
        customBalance: false,
        logo: '/assets/images/xec.png',
        name: {
