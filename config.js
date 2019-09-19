@@ -18,7 +18,7 @@ config.MONGO_OPTIONS = {
 
 // cron processes (aggregation of main stat - actions, transactions, accounts, analytics)
 config.CRON = true;
-config.CRON_API = 'https://public.eosinfra.io';
+config.CRON_API = 'http://3.10.0.98:8888';
 
 // anable TPS APS daemon aggregation
 config.TPS_ENABLE = true;
