@@ -39,7 +39,8 @@ async function getMaxTps(){
 };
 
 async function getBlockRecursive(settings, info, elements){
-	let blockNumber = elements[0];
+	let blockNumber = info.last_irreversible_block_num;
+  if(blockNumber === undefined) blockNumber = info.block_num;
 	if (elements.length === 0){
 		 return await wrapper.toStrong(settings.save());
 	}
