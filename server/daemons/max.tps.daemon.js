@@ -40,7 +40,6 @@ async function getMaxTps(){
 
 async function getBlockRecursive(settings, info, elements){
 	let blockNumber = elements[0];
-	console.log(`============ blockNum ${blockNumber} ======= elements lenght: ${elements.length}`)
 	if (elements.length === 0){
 		 return await wrapper.toStrong(settings.save());
 	}
@@ -54,7 +53,6 @@ async function getBlockRecursive(settings, info, elements){
 	   	maxPerSec += block.transactions.length;
 	}
 	if (counter === 1){
-		console.log(`=== Block ${blockNumber}, Max TPS: ${maxPerSec}, Actions: ${settings.actions}, Accounts: ${settings.accounts}`);
 		
 		let { trxCounter, actionsCounter, accounts } = getActionsCount(block);
 		currentTrx = trxCounter;
@@ -87,7 +85,6 @@ async function getBlockRecursive(settings, info, elements){
 
 		previousTrxTime = +new Date(block.timestamp);
 	}
-  console.log(`config.CUSTOM_GLOBA_STATS: ${config.CUSTOM_GLOBA_STATS} ==== newAccounts.length ${newAccounts.length}`);
 	if (config.CUSTOM_GLOBA_STATS){
 		settings.actions += actCounter;
 		if (newAccounts.length){
