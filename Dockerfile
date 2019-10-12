@@ -1,4 +1,4 @@
-FROM node:10.16.0
+FROM node:10.15.3
 
 ARG PORT=3039
 ENV PORT=${PORT}
@@ -7,24 +7,16 @@ ARG CONFIG_NET=production
 ENV CONFIG_NET=${CONFIG_NET}
 
 WORKDIR /home/eosweb
-RUN mkdir server
+COPY . /home/eosweb
 
-RUN npm install -g pm2@3.5.1
+RUN npm install -g pm2@2.10.4
+RUN npm install -g @angular/cli@7.1.4
+RUN cd /home/eosweb && npm install
+RUN cd /home/eosweb && node patch
+RUN cd /home/eosweb/server && npm install
+RUN cd /home/eosweb && ng build --configuration=${CONFIG_NET}
 
-COPY package.json ./
-RUN npm install
-
-COPY server/package.json ./server/
-RUN cd ./server && npm install && cd ..
-
-COPY . .
-RUN node patch
-
-RUN npm run build -- --configuration="${CONFIG_NET}"
-
-VOLUME [ "/home/eosweb/config" ]
-
-CMD ["pm2-runtime", "./config/ecosystem.config.js", "--web", "9615"]
+CMD ["pm2-runtime", "/home/eosweb/server/ecosystem.config.js", "--web"]
 
 EXPOSE ${PORT}
 EXPOSE 9615
