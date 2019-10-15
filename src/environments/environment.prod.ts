@@ -3,16 +3,16 @@ export const environment = {
     production: true,
     appName: 'CANBlockExplorer',
     network: {
-        blockchain: 'eos',
+        blockchain: 'can',
         host: '3.10.0.98',
-        port: 8443,
-        protocol: 'https',
+        port: 8888,
+        protocol: 'http',
         expireInSeconds: 120,
         chainId: chain
     },
     chain: chain,
     Eos: {
-        httpEndpoint: 'https://3.10.0.98:8443',
+        httpEndpoint: 'https://pof4k4f8e2.execute-api.ap-northeast-2.amazonaws.com/test',
         chainId: chain,
         verbose: false
     },

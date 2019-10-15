@@ -5,20 +5,23 @@ const path = require('path');
 let config = {};
 
 // production mod
-config.PROD = false;
+config.PROD = true;
 
 // mongo uri and options
-config.MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/EOSweb';
+config.MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017';
 config.MONGO_OPTIONS = {
     socketTimeoutMS: 30000,
     keepAlive: true,
     reconnectTries: 30000,
-    useNewUrlParser: true
+    useNewUrlParser: true,
+  dbName: 'EOSweb',
+  user: 'root',
+  pass: 'test123',
 };
 
 // cron processes (aggregation of main stat - actions, transactions, accounts, analytics)
-config.CRON = false;
-config.CRON_API = 'https://public.eosinfra.io';
+config.CRON = true;
+config.CRON_API = 'https://pof4k4f8e2.execute-api.ap-northeast-2.amazonaws.com/test';
 
 // anable TPS APS daemon aggregation
 config.TPS_ENABLE = true;
@@ -39,7 +42,7 @@ config.telegram = {
 
 // reserve nodes
 config.endpoints = [
-      'http://3.10.0.98:8888'
+      'https://pof4k4f8e2.execute-api.ap-northeast-2.amazonaws.com/test'
       // 'https://eos.greymass.com',
       // 'https://public.eosinfra.io', 
       // 'http://eosbp-0.atticlab.net'
@@ -61,10 +64,10 @@ config.eosConfig = {
 
 
 // api url for producers list
-config.customChain = 'http://3.10.0.98:8888';
+config.customChain = 'https://pof4k4f8e2.execute-api.ap-northeast-2.amazonaws.com/test';
 
 // api url for history
-config.historyChain = 'http://3.10.0.98:8888';
+config.historyChain = config.customChain;
 
 // tokens api
 config.tokensAPI = 'http://api.light.xeos.me/api/account/eos/';
