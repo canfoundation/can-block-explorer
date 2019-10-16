@@ -11,6 +11,7 @@
 /server/logs
 #config.js
 config/config*.js
+config/domain.*
 /jungle.config.js
 /xec.config.js
 /wax.config.js
