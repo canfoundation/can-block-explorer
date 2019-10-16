@@ -73,7 +73,7 @@ const server = https.createServer(
   {
     key: fs.readFileSync(path.join(process.cwd(), 'config/domain.key')),
     cert: fs.readFileSync(path.join(process.cwd(), 'config/domain.crt')),
-    ca: fs.readFileSync(path.join(process.cwd(), 'config/domain.crt')),
+    ca: fs.readFileSync(path.join(process.cwd(), 'config/domain.ca')),
   },
   app,
 );
