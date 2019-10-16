@@ -4,7 +4,7 @@ module.exports = {
     script    : `./server/server.js`,
     env: {
       CONFIG: 'config/config',
-      PORT: 80,
+      PORT: 443,
     },
     //instances : `2`,
     //exec_mode : `cluster`,
