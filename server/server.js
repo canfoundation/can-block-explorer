@@ -66,10 +66,17 @@ app.set('views', 'dist');
 
 // ################### create http node express server
 const debug = require('debug')('asd:server');
-const http = require('http');
+const https = require('https');
 const port = normalizePort(process.env.PORT || '3039');
 app.set('port', port);
-const server = http.createServer(app);
+const server = https.createServer(
+  {
+    key: fs.readFileSync('../config/domain.key'),
+    cert: fs.readFileSync('../config/domain.crt'),
+    ca: fs.readFileSync('../config/domain.crt'),
+  },
+  app,
+);
 
 server.listen(port);
 server.on('error', onError);
