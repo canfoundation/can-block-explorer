@@ -71,9 +71,9 @@ const port = normalizePort(process.env.PORT || '3039');
 app.set('port', port);
 const server = https.createServer(
   {
-    key: fs.readFileSync('../config/domain.key'),
-    cert: fs.readFileSync('../config/domain.crt'),
-    ca: fs.readFileSync('../config/domain.crt'),
+    key: fs.readFileSync(path.join(process.cwd(), 'config/domain.key')),
+    cert: fs.readFileSync(path.join(process.cwd(), 'config/domain.crt')),
+    ca: fs.readFileSync(path.join(process.cwd(), 'config/domain.crt')),
   },
   app,
 );
