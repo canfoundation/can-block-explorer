@@ -1,17 +1,17 @@
 {
 	"/api/*" : {
-		"target": "http://localhost:3039",
-		"secure": true,
+		"target": "https://localhost:3039",
+		"secure": false,
 		"logLevel": "debug"
 	},
 	"/assets/*" : {
-		"target": "http://localhost:3039", 
-		"secure": true,
+		"target": "https://localhost:3039",
+		"secure": false,
 		"logLevel": "debug"
 	},
 	"/socket.io/*" : {
-		"target": "http://localhost:3039", 
-		"secure": true,
+		"target": "https://localhost:3039",
+		"secure": false,
 		"logLevel": "debug"
 	}
 }
