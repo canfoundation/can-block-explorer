@@ -3,10 +3,10 @@ export const environment = {
     production: true,
     appName: 'CANBlockExplorer',
     network: {
-        blockchain: 'can',
-        host: '3.10.0.98',
-        port: 8888,
-        protocol: 'http',
+        blockchain: 'eos',
+        host: 'api-testnet.canfoundation.io',
+        port: 8443,
+        protocol: 'https',
         expireInSeconds: 120,
         chainId: chain
     },
