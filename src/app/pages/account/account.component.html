@@ -15,7 +15,7 @@
 				<div class="col-sm-9">
 					<strong>{{ balance?.toLocaleString() }} {{frontConfig?.totalBalance}}</strong> 
 					<span *ngIf="frontConfig?.convertToUSD"> / </span> 
-					<small *ngIf="frontConfig?.convertToUSD">{{ (balance * eosRate?.RAW?.EOS?.USD?.PRICE).toLocaleString() }} USD</small>
+					<small *ngIf="frontConfig?.convertToUSD">{{ (balance * eosRate?.RAW[frontConfig.coin]?.USD?.PRICE).toLocaleString() }} USD</small>
 				</div>
 			</div>
 			
@@ -33,7 +33,7 @@
 					<strong class="block-info-header">Staked:</strong>
 				</div>
 				<div class="col-sm-9">
-					<small><strong>{{ mainData?.voter_info?.staked / 10000 }} {{frontConfig?.coin}}</strong></small>
+					<small><strong>{{ (frontConfig?.coin !== 'WAX') ? mainData?.voter_info?.staked / 10000 : mainData?.voter_info?.staked / 100000000 }} {{frontConfig?.coin}}</strong></small>
 				</div>
 			</div>
 

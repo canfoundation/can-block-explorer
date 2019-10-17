@@ -15,6 +15,7 @@ config/config*.js
 config/domain.*
 /jungle.config.js
 /xec.config.js
+/wax.config.js
 
 # profiling files
 chrome-profiler-events.json

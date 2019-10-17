@@ -23,6 +23,7 @@ export const environment = {
     },
     frontConfig: {
        coin: 'CAT',
+       bp: 'bp.json',
        tokenContract: 'eosio.token',
        totalBalance: 'CAT',
        convertToUSD: true,
@@ -32,12 +33,14 @@ export const environment = {
           big: 'block',
           small: 'explorer'
        },
-       nets: [{ name: 'Mainnet', url: '#', active: true },
-              { name: 'Jungle', url: '#', active: false }],
-       disableNets: true,
-       voteDonationAcc: '',
-       disableVoteDonation: true,
-       version: '1.0.0',
+       nets: [{ name: 'Mainnet', url: 'https://eosweb.net', active: true },
+              { name: 'Jungle', url: 'https://jungle.eosweb.net', active: false },
+              { name: 'Europechain', url: 'https://xec.eosweb.net', active: false },
+              { name: 'WAX', url: 'https://wax.eosweb.net', active: false }],
+       disableNets: false,
+       voteDonationAcc: 'eoswebnetbp1',
+       disableVoteDonation: false,
+       version: '2.2.8',
        producers: 1000,
        social: [
          { link: 'https://github.com/canfoundation', icon: 'fa-github' },
