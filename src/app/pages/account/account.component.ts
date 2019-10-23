@@ -79,7 +79,11 @@ export class AccountPageComponent implements OnInit, OnDestroy{
                           if (this.mainData.voter_info && this.mainData.voter_info.staked){
                               staked = this.mainData.voter_info.staked;
                           }
-                          this.balance = (this.frontConfig.customBalance) ? this.unstaked : this.unstaked + staked / 10000;
+                          if (this.frontConfig.customBalance){
+                            this.balance = this.unstaked;
+                          } else {
+                            this.balance = (this.frontConfig.coin !== 'WAX') ? this.unstaked + staked / 10000 : this.unstaked + staked / 100000000;
+                          } 
                           this.eosRate = this.MainService.getEosPrice();
                       },
                       (error) => {
@@ -89,7 +93,8 @@ export class AccountPageComponent implements OnInit, OnDestroy{
 
   getActions(accountName, pos){
       this.spinnerActions = true;
-      this.http.get(`/api/v1/get_actions/${accountName}/-${pos}/-${this.elementsLimit}`)
+      pos = (pos === 1) ? -1 : pos;
+      this.http.get(`/api/v1/get_actions/${accountName}/${pos}/-${this.elementsLimit}`)
            .subscribe((res: any) => {
                           this.actionsNotSorted = res.actions;
                           if(res.actions[0] && !res.actions[0].action_trace){

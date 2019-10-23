@@ -1,5 +1,6 @@
 import { Injectable, EventEmitter, Inject } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class MainService {
@@ -24,6 +25,7 @@ export class MainService {
   };
   ungerKey = "EOS1111111111111111111111111111111114T1Anm";
   liveTXHide = localStorage.getItem('liveTXHide') ? true : false;
+  frontConfig = environment.frontConfig;
 
   private messageSource = new BehaviorSubject("");
   currentMessage = this.messageSource.asObservable();
@@ -87,9 +89,11 @@ export class MainService {
     let percentageVotesRewarded = total_votes / (totalProducerVoteWeight - this.votesToRemove) * 100;
      
      if (position < 22) {
-       reward += 318;
+       reward = (this.frontConfig.coin === 'EOS') ? reward + 443 : 4909;
      }
-     reward += percentageVotesRewarded * 200;
+     if (this.frontConfig.coin === 'EOS'){
+       reward += percentageVotesRewarded * 200;
+     }
      if (reward < 100) {
        reward = 0;
      }
@@ -97,7 +101,11 @@ export class MainService {
   }
 
   calculateEosFromVotes(votes){
-      let date = +new Date() / 1000 - 946684800;
+      let date = +new Date() / 1000 - 946684800; // 946... start timestamp
+      if (this.frontConfig.coin === 'WAX'){
+        let weight = parseInt(`${ date / (86400 * 7) }`, 10) / 13;
+        return votes / (2 ** weight) / 100000000;
+      }
       let weight = parseInt(`${ date / (86400 * 7) }`, 10) / 52; // 86400 = seconds per day 24*3600
       return votes / (2 ** weight) / 10000;
   };
