@@ -12,7 +12,7 @@ export const environment = {
     },
     chain: chain,
     Eos: {
-        httpEndpoint: 'https://pof4k4f8e2.execute-api.ap-northeast-2.amazonaws.com/test',
+        httpEndpoint: 'https://api-testnet.canfoundation.io:8443',
         chainId: chain,
         verbose: false
     },
