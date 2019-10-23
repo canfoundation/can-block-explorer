@@ -21,7 +21,7 @@ config.MONGO_OPTIONS = {
 
 // cron processes (aggregation of main stat - actions, transactions, accounts, analytics)
 config.CRON = true;
-config.CRON_API = 'https://pof4k4f8e2.execute-api.ap-northeast-2.amazonaws.com/test';
+config.CRON_API = 'https://api-testnet.canfoundation.io:8443';
 
 // anable TPS APS daemon aggregation
 config.TPS_ENABLE = true;
@@ -42,7 +42,7 @@ config.telegram = {
 
 // reserve nodes
 config.endpoints = [
-      'https://pof4k4f8e2.execute-api.ap-northeast-2.amazonaws.com/test'
+      'https://api-testnet.canfoundation.io:8443'
       // 'https://eos.greymass.com',
       // 'https://public.eosinfra.io', 
       // 'http://eosbp-0.atticlab.net'
@@ -64,10 +64,10 @@ config.eosConfig = {
 
 
 // api url for producers list
-config.customChain = 'https://pof4k4f8e2.execute-api.ap-northeast-2.amazonaws.com/test';
+config.customChain = 'https://api-testnet.canfoundation.io:8443';
 
 // api url for history
-config.historyChain = config.customChain;
+config.historyChain = 'https://history-testnet.canfoundation.io';
 
 // tokens api
 config.tokensAPI = 'http://api.light.xeos.me/api/account/eos/';
