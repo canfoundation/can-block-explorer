@@ -54,52 +54,50 @@ export const environment = {
     }
 };*/
 
-const chain = '1064487b3cd1a897ce03ae5b6a865651747e2e152090f99c1d19d44e01aea5a4';
+const chain = '5dad9f713ce25d88d509c54e69820eb5ddda1132fc15107b33b56ad6d7110de5';
 export const environment = {
     production: true,
-    appName: 'WAXweb',
+    appName: 'CANBlockExplorer',
     network: {
         blockchain: 'eos',
-        host: 'wax.cryptolions.io',
-        port: 443,
+        host: 'api-testnet.canfoundation.io',
+        port: 8443,
         protocol: 'https',
         expireInSeconds: 120,
         chainId: chain
     },
     chain: chain,
     Eos: {
-        httpEndpoint: 'https://wax.cryptolions.io',
+        httpEndpoint: 'https://api-testnet.canfoundation.io:8443',
         chainId: chain,
         verbose: false
     },
     frontConfig: {
-       coin: 'WAX',
+       coin: 'CAT',
        bp: 'bp.json',
        tokenContract: 'eosio.token',
-       totalBalance: 'WAX',
+       totalBalance: 'CAT',
        convertToUSD: true,
        customBalance: false,
-       logo: '/assets/images/wax.png',
+       logo: '/assets/images/canweb.png',
        name: {
-          big: 'wax',
-          small: 'web'
+          big: 'CAN',
+          small: 'explorer'
        },
-       nets: [{ name: 'Mainnet', url: 'https://eosweb.net', active: false },
-              { name: 'Jungle', url: 'https://jungle.eosweb.net', active: false },
-              { name: 'Europechain', url: 'https://xec.eosweb.net', active: false },
-              { name: 'WAX', url: 'https://wax.eosweb.net', active: true }],
+       nets: [{ name: 'CAN-Main-net', url: 'https://explorer.canfoundation.io/', active: true },
+              { name: 'CAN-Test-net', url: 'https://explorer-test.canfoundation.io/', active: false }],
        disableNets: false,
-       voteDonationAcc: 'cryptolions1',
+       voteDonationAcc: 'lecle.bp',
        disableVoteDonation: false,
        version: '1.0.0',
        producers: 1000,
        social: [
-         { link: 'https://github.com/orange1337/eosweb', icon: 'fa-github' },
-         { link: 'https://www.facebook.com/EOSwebnet-199076424068961', icon: 'fa-facebook' },
-         { link: 'https://www.reddit.com/user/eosweb', icon: 'fa-reddit-alien' },
-         { link: 'https://medium.com/@EoswebN', icon: 'fa-medium' },
-         { link: 'https://twitter.com/EoswebN', icon: 'fa-twitter' },
-         { link: 'https://t.me/eoswebdevchat', icon: 'fa-telegram-plane' }
+         { link: 'https://github.com/canfoundation', icon: 'fa-github' },
+         { link: 'https://www.facebook.com/canfoundation.io', icon: 'fa-facebook' },
+         { link: '', icon: 'fa-reddit-alien' },
+         { link: '', icon: 'fa-medium' },
+         { link: '', icon: 'fa-twitter' },
+         { link: 'https://t.me/cryptobadge_usergroup', icon: 'fa-telegram-plane' }
        ],
        liveTXenable: true
     }
