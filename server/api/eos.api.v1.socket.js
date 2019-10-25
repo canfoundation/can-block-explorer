@@ -51,8 +51,7 @@ module.exports = (io, mongoMain, metrics) => {
 
   function getDataSocket(){
       if (!io || !io.sockets.adapter.rooms[SOCKET_ROOM]){
-          log.info('====== No users online');
-          return setTimeout(getDataSocket, updateTimeBlocks);;
+          return setTimeout(getDataSocket, updateTimeBlocks);
       }
       let timeRequestStart = +new Date(); 
       async.parallel({

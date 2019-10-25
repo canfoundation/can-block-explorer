@@ -22,7 +22,7 @@ customFunctions.getLastBlocks = (eos, elements, callback) => {
 	   					cb();
 	   				})
 	   				.catch(err => {
-	   					console.error('customFunctions getBlock error - ', err);
+	   					console.error('customFunctions getLastBlocks error - ', err);
 	   					cb();
 	   				});
 	   			}, (err) => {
@@ -51,7 +51,7 @@ function getBlockOffset(){
 	     		
 	     })
 	     .catch(err => {
-	     		console.error('customFunctions getBlock error - ', err);
+	     		console.error('customFunctions getBlockOffset error - ', err);
 	     });
 }
 
