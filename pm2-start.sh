@@ -12,3 +12,5 @@ echo "cleaning up done"
 
 echo "start app"
 pm2 start ./config/ecosystem.config.js
+
+pm2 logs api
